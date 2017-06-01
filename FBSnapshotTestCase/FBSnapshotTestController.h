@@ -117,7 +117,7 @@ extern NSString *const FBDiffedImageKey;
  @param identifier An optional identifier, used is there are muliptle snapshot tests in a given -test method.
  @param tolerance The percentage of pixels that can differ and still be considered 'identical'
  @param colorTolerance The euclidean distance allowable between two colors (with each channel 0-1.0) to consider pixels to be "identical". colorTolerance is applied before calculating percentage of pixels that are different.
- @param error An error to log in an XCTAssert() macro if the method fails (missing reference image, images differ, etc).
+ @param errorPtr An error to log in an XCTAssert() macro if the method fails (missing reference image, images differ, etc).
  @returns YES if the comparison (or saving of the reference image) succeeded.
  */
 - (BOOL)compareSnapshotOfViewOrLayer:(id)viewOrLayer
@@ -129,11 +129,11 @@ extern NSString *const FBDiffedImageKey;
 
 /**
  Performs the comparison of a view or layer.
- @param view The view or layer to snapshot.
+ @param viewOrLayer The view or layer to snapshot.
  @param selector The test method being run.
  @param identifier An optional identifier, used is there are muliptle snapshot tests in a given -test method.
  @param tolerance The percentage of pixels that can differ and still be considered 'identical'
- @param error An error to log in an XCTAssert() macro if the method fails (missing reference image, images differ, etc).
+ @param errorPtr An error to log in an XCTAssert() macro if the method fails (missing reference image, images differ, etc).
  @returns YES if the comparison (or saving of the reference image) succeeded.
  */
 - (BOOL)compareSnapshotOfViewOrLayer:(id)viewOrLayer
